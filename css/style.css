@@ -1,0 +1,98 @@
+body{
+	background-color: #f8f8f8;
+}
+
+.content{
+	margin: 40px auto;
+	width:358px;
+	padding:10px;
+	border-radius: 4px;
+	box-shadow: 0 0 4px #222;
+	box-sizing: border-box;
+}
+
+.form-group{
+	margin-bottom: 10px;
+}
+
+label{
+	background-image: linear-gradient(to bottom, #65bbbb, #3e9797);
+    padding: 8px;
+    color: #fff;
+    vertical-align: middle;
+    border-radius: 5px 0 0 5px;
+    border: 1px solid #3F7B7B;
+    box-shadow: 0 0 3px #777;
+    border-right: none;
+    display: inline-block;
+    font-size:18px;
+    width:30%;
+    text-align: center;
+	box-sizing: border-box;
+}
+
+
+input{
+    padding: 8px;
+    vertical-align: middle;
+    border-radius: 0 5px 5px 0;
+    border: 1px solid #3F7B7B;
+    box-shadow: 0 0 3px #777;
+    border-left: none;
+    display: inline-block;
+    margin-left: -4px;
+    font-size:18px;
+    width:70%;
+    color: #A9A9A9;
+	box-sizing: border-box;
+}
+
+input:focus{
+	outline:none;
+}
+
+
+span p{
+	color:red;
+	text-align: center;
+	font-size: 18px;
+    border: 1px solid #f00;
+    box-shadow: 0 0 3px #f00;
+    padding: 8px;
+    font-weight: bold;
+    border-radius: 3px;
+}
+
+span p:before{
+	content: " !";
+	width:10px;
+	color:#fff;
+	background-color:red;
+	padding:2px 8px;
+}
+
+button{
+	background-image: linear-gradient(to bottom, #65bbbb, #3e9797);
+    padding: 8px;
+    color: #fff;
+    vertical-align: middle;
+    border-radius: 5px;
+    border: 1px solid #3F7B7B;
+    box-shadow: 0 0 3px #777;
+    display: block;
+    font-size:18px;
+    width:100%;
+    text-align: center;
+	box-sizing: border-box;
+}
+
+.last{
+	padding: 8px;
+	box-shadow: none;
+	border:1px solid #3F7B7B;
+	border-radius: 5px;
+	display: block;
+	margin:0 auto;
+	width:100%;
+	box-sizing: border-box;
+}
