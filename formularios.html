@@ -16,7 +16,7 @@
             <div>
                 <form name="userForm" ng-submit="submitForm(userForm.$valid)" novalidate>
                     <div class="form-group">
-                        <label>Nombre:</label>
+                        <label for="Nombre">Nombre :</label>
                         <input type="text" ng-model="nombre" name ="nombre" placeholder="Nombre" ng-minlength="8" ng-required="true"/>
                         <span ng-show="userForm.nombre.$invalid && !userForm.nombre.$pristine">
                             <p ng-show="userForm.nombre.$error.required" class="help-block">
@@ -40,14 +40,13 @@
                             </p>
                         </span>
                     </div>
-                    <button type="submit"  ng-disabled="userForm.$invalid">Submit</button>
+                    <button type="submit" ng-disabled="userForm.$invalid">Submit</button>
                 </form>
             </div><br>
             <div>
                 <form>
                     <input type = "text" class="last" ng-model="nombre">
                 </form>
-                <div class="last-div" ng-bind="nombre"></div>
             </div>
         </div>
     </body>
