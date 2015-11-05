@@ -1,46 +1,53 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Mi página Angular</title>
-    <script src="js/angular.js"></script>
-    <script src="js/app.js"></script>
-</head>
-<body ng-app="validationApp" ng-controller="miCtrl">
-<div>
+    <head>
+        <!--Title-->
+        <title>Mi página Angular</title>
+        <!--Metatags-->
+        <meta charset="UTF-8">
+        <!--style-->
+        <link rel="stylesheet" href="css/style.css">
+        <!--script-->
+        <script src="js/angular.js"></script>
+        <script src="js/app.js"></script>
+    </head>
+    <body ng-app="validationApp" ng-controller="miCtrl">
+        <div class="content">
+            <div>
+                <form name="userForm" ng-submit="submitForm(userForm.$valid)" novalidate>
+                    <div class="form-group">
+                        <label for="Nombre">Nombre :</label>
+                        <input type="text" ng-model="nombre" name ="nombre" placeholder="Nombre" ng-minlength="8" ng-required="true"/>
+                        <span ng-show="userForm.nombre.$invalid && !userForm.nombre.$pristine">
+                            <p ng-show="userForm.nombre.$error.required" class="help-block">
+                                Your name is required.
+                            </p>
+                            <p ng-show="userForm.nombre.$error.minlength" class="help-block">
+                                Name is too short.
+                            </p>
+                        </span>
+                    </div>
 
-        <form name="userForm" ng-submit="submitForm(userForm.$valid)" novalidate>
-            <div class="form-group">
-                <label>Nombre de usuario:</label>
-                <input type="text" ng-model="nombre" name ="nombre" placeholder="Pepito" ng-minlength="8" ng-required="true">
-                <span ng-show="userForm.nombre.$invalid && !userForm.nombre.$pristine">
-                    <p ng-show="userForm.nombre.$error.required" class="help-block">Your name is required.</p>
-                    <p ng-show="userForm.nombre.$error.minlength" class="help-block">Name is too short.</p>
-                </span>
+                    <div class="form-group">
+                        <label>Password:</label>
+                        <input input type="password" name="password" placeholder="password" ng-model="password" ng-minlength="8" ng-required="true"/>
+                        <span ng-show="userForm.password.$invalid && !userForm.password.$pristine">
+                            <p ng-show="userForm.password.$error.required" class="help-block">
+                                Your password is required.
+                            </p>
+                            <p ng-show="userForm.password.$error.minlength" class="help-block">
+                                Password is too short.
+                            </p>
+                        </span>
+                    </div>
+                    <button type="submit" ng-disabled="userForm.$invalid">Submit</button>
+                </form>
+            </div><br>
+            <div>
+                <form>
+                    <input type = "text" class="last" ng-model="nombre">
+                </form>
             </div>
-
-            <div class="form-group">
-                <label>Password:</label>
-                <input input type="password" name="password" ng-model="password" ng-minlength="8" ng-required="true"/>
-                <span ng-show="userForm.password.$invalid && !userForm.password.$pristine">
-                    <p ng-show="userForm.password.$error.required" class="help-block">Your password is required.</p>
-                    <p ng-show="userForm.password.$error.minlength" class="help-block">Password is too short.</p>
-                </span>
-
-            </div>
-
-            <button type="submit"  ng-disabled="userForm.$invalid">Submit</button>
-
-    </form>
-</div>
-<br>
-<div>
-    <form>
-        <input type = "text" ng-model="nombre">
-    </form>
-    <div ng-bind="nombre" ></div>
-</div>
-
-</body>
-
+        </div>
+    </body>
 </html>
